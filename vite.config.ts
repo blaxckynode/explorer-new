@@ -1,6 +1,7 @@
 import { fileURLToPath, URL } from 'node:url';
 
 import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import Layouts from 'vite-plugin-vue-layouts';
@@ -16,6 +17,10 @@ export default defineConfig({
     'process.env': {}
   },
   plugins: [
+    [react()],
+    build: {
+      outDir: 'dist'
+    }
     vue({
       template: {
         compilerOptions: {
